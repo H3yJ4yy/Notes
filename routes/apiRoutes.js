@@ -2,13 +2,13 @@ const router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const fileName = './db/db.json'
+const fileName = '../db/db.json'
 
 router.get('/notes', (req, res) => {
-    const data = fs.readFileSync(fileName, utf8);
+    const data = fs.readFileSync('db/db.json', 'utf8');
     const parseData = JSON.parse(data)
     // console.log(data);
-    res.status(200).json(parseData);
+    res.json(parseData);
 } )
 
 router.post("/notes", (req, res) => {

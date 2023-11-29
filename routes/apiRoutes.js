@@ -18,7 +18,9 @@ router.post("/notes", (req, res) => {
         text, 
         id: uuidv4()
     }
-    const newNote = [...fileName, myNote];
+    const currentNotes = fs.readFileSync('db/db.json', 'utf8');
+    const parseNotes = JSON.parse(currentNotes);
+    const newNote = [...parseNotes, myNote];
     const data = fs.writeFileSync('db/db.json', JSON.stringify(newNote), (err) => console.log(err));
     res.json(data);
 

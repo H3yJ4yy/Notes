@@ -1,7 +1,7 @@
 
   # Take My Notes 
 
-  ### Table of Contents (Optional)
+  ### Table of Contents 
 
   - [Description](#description)
   - [Packages](#packages)
